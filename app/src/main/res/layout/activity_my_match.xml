@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.MyMatchActivity"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/divToolbar"
+            layout="@layout/toolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_match"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/divToolbar"
+            android:layout_marginTop="15dp"
+            tools:listitem="@layout/item_match" />
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_match"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_black_24dp"/>
+
+</com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout>

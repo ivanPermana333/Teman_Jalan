@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sportsclub">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_torch"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_torch"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activities.user_profile"></activity>
+        <activity
+            android:name=".activities.MyMatchActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.AllMatchActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.HistoryBookingActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.ProfileActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.MainDashboardActivity"
+            android:theme="@style/DashboardAppThemeNoAcitonBar" />
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activities.AcceptActivity"
+            android:theme="@style/AppThemeNoAcitonBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.RequestActivity"
+            android:theme="@style/AppThemeNoAcitonBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activities.SignInActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".activities.BookingActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.DetailFieldActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.FieldActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.SplashScreenActivity"
+            android:theme="@style/AppThemeNoAcitonBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:theme="@style/DashboardAppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.DashboardActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+
+    </application>
+
+</manifest>

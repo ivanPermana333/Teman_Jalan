@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ProfileActivity"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/divToolbar"/>
+
+    <LinearLayout
+        android:id="@+id/divProfileTop"
+        android:layout_below="@+id/divToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_20sdp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/myPict"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/gtg" />
+
+    </LinearLayout>
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/divProfileTop"-->
+<!--        android:layout_below="@+id/divToolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:gravity="center"-->
+<!--        android:paddingVertical="@dimen/_20sdp">-->
+<!--        <TextView-->
+<!--            android:id="@+id/title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:fontFamily="@font/montserrat_bold"-->
+<!--            android:text="Teman Jalan"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textColor="@color/nah"/>-->
+
+<!--    </LinearLayout>-->
+
+    <ScrollView
+        android:layout_below="@+id/divProfileTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/divProfileBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+            //Username
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/username_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Nama Pengguna"
+                android:theme="@style/ProfileText"
+                android:textColorHint="@color/txtSemiGrey"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:enabled="false"
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //Nama
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nama_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Nama Asli"
+                android:theme="@style/ProfileText"
+                android:textColorHint="@color/txtSemiGrey"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //Email
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Email"
+                android:theme="@style/ProfileText"
+                android:textColorHint="@color/txtSemiGrey"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_email"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //Phone
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="No. Ponsel"
+                android:theme="@style/ProfileText"
+                android:textColorHint="@color/txtSemiGrey"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/_15sdp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //Alamat
+
+            <EditText
+                android:id="@+id/et_nama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:fontFamily="@font/sf_pro_display_medium"
+                android:paddingBottom="@dimen/_15sdp"
+                android:textColor="@color/txtBlack"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/alamat_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Alamat Lengkap"
+                android:theme="@style/ProfileText"
+                android:textColorHint="@color/txtSemiGrey"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_alamat"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.example.sportsclub.custom.CustomTextViewBold
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?selectableItemBackground"
+                android:id="@+id/tvLogOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12ssp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="LANJUTKAN"
+                android:background="@drawable/bg_rectangle_01b"
+                android:backgroundTint="@color/nah"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="#fff"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

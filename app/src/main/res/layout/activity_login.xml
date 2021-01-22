@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/divBottom"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+                <Button
+                    android:id="@+id/btn_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundedbutton"
+                    android:onClick="Login"
+                    android:text="sign up"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_sign_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dip"
+                    android:background="@drawable/button_border"
+                    android:onClick="Login"
+                    android:text="sign in"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />"
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/divBottom"
+            >
+            <ImageView
+                android:layout_centerInParent="true"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="32dp"
+                    android:src="@drawable/ic_torch" />
+
+            <TextView
+                android:id="@+id/tvSkip"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_1sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="Skip"
+                android:textColor="@color/nah"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="#ffffff"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="@android:dimen/app_icon_size">-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        android:src="@drawable/ic_torch" />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="100dp"-->
+<!--        android:text="Sports Club"-->
+<!--        android:textSize="30dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_sign_up"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/roundedbutton"-->
+<!--        android:onClick="Login"-->
+<!--        android:text="sign up"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textSize="14sp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_sign_in"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dip"-->
+<!--        android:background="@drawable/button_border"-->
+<!--        android:onClick="Login"-->
+<!--        android:text="sign in"-->
+<!--        android:textColor="@color/colorPrimary"-->
+<!--        android:textSize="14sp" />"-->
+<!--    </LinearLayout>-->
+
+    <!--<TextView
+        android:id="@+id/tv_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:textSize="17sp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="32dp"/>-->
+
+</com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout>
