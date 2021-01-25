@@ -46,9 +46,9 @@ import static com.example.sportsclub.activities.SignInActivity.SHARED_PREFS;
 import static xdroid.toaster.Toaster.toast;
 
 public class MainDashboardActivity extends AppCompatActivity {
-    private ImageButton imgbtn;
+    private ImageButton imgbtn,divBooking;
     private TextView tvDateToday, tvResultCategory, tvName, tvEmail, tvCondition;
-    private LinearLayout divAllMatch, divMyMatch,divBooking , divFutsal, divBuluTangkis, divVolley;
+    private LinearLayout divAllMatch, divMyMatch,  divFutsal, divBuluTangkis, divVolley;
     private CircleImageView ivFutsal, ivBuluTangkis, ivVolley;
     private ImageView ivReload, divProfile;
     private ShimmerFrameLayout mShimmerViewContainer;
@@ -94,12 +94,12 @@ public class MainDashboardActivity extends AppCompatActivity {
 //                    alertNotLogin();
 //                }
 //            });
-//            divBooking.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    alertNotLogin();
-//                }
-//            });
+            divBooking.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertNotLogin();
+                }
+            });
         }
 
 
@@ -184,15 +184,15 @@ public class MainDashboardActivity extends AppCompatActivity {
             }
         });
 
-//        divBooking = findViewById(R.id.divBooking);
-//        divBooking.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainDashboardActivity.this, HistoryBookingActivity.class);
-//                intent.putExtra("Title", "Booking");
-//                startActivity(intent);
-//            }
-//        });
+        divBooking = findViewById(R.id.divBooking);
+        divBooking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainDashboardActivity.this, HistoryBookingActivity.class);
+                intent.putExtra("Title", "Booking");
+                startActivity(intent);
+            }
+        });
 
         divFutsal = findViewById(R.id.divFutsal);
         divFutsal.setOnClickListener(new View.OnClickListener() {
