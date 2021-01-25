@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginHorizontal="@dimen/_15sdp"
-                android:hint="Nama Pengguna"
+                android:hint="Username"
                 android:theme="@style/ProfileText"
                 android:textColorHint="@color/txtSemiGrey"
                 app:boxBackgroundMode="filled"
@@ -90,13 +90,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginHorizontal="@dimen/_15sdp"
-                android:hint="Nama Asli"
+                android:hint="Nama"
                 android:theme="@style/ProfileText"
                 android:textColorHint="@color/txtSemiGrey"
                 app:boxBackgroundMode="filled"
                 app:boxCornerRadiusTopEnd="3dp"
                 app:boxCornerRadiusTopStart="3dp">
-
+                <EditText
+                    android:id="@+id/et_nama"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/_15sdp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             //Email
@@ -148,24 +156,13 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             //Alamat
-
-            <EditText
-                android:id="@+id/et_nama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:fontFamily="@font/sf_pro_display_medium"
-                android:paddingBottom="@dimen/_15sdp"
-                android:textColor="@color/txtBlack"
-                android:textStyle="bold" />
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/alamat_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginHorizontal="@dimen/_15sdp"
-                android:hint="Alamat Lengkap"
+                android:hint="Alamat"
                 android:theme="@style/ProfileText"
                 android:textColorHint="@color/txtSemiGrey"
                 app:boxBackgroundMode="filled"
@@ -193,9 +190,9 @@
                 android:gravity="center"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginHorizontal="@dimen/_15sdp"
-                android:text="LANJUTKAN"
+                android:text="LOG OUT"
                 android:background="@drawable/bg_rectangle_01b"
-                android:backgroundTint="@color/nah"
+                android:backgroundTint="@color/red_btn_bg_color"
                 android:textSize="@dimen/_12ssp"
                 android:textColor="#fff"
                 android:textStyle="bold"/>

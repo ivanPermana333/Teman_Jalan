@@ -9,9 +9,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -44,6 +46,7 @@ import static com.example.sportsclub.activities.SignInActivity.SHARED_PREFS;
 import static xdroid.toaster.Toaster.toast;
 
 public class MainDashboardActivity extends AppCompatActivity {
+    private ImageButton imgbtn;
     private TextView tvDateToday, tvResultCategory, tvName, tvEmail, tvCondition;
     private LinearLayout divAllMatch, divMyMatch,divBooking , divFutsal, divBuluTangkis, divVolley;
     private CircleImageView ivFutsal, ivBuluTangkis, ivVolley;
@@ -79,24 +82,24 @@ public class MainDashboardActivity extends AppCompatActivity {
                     alertNotLogin();
                 }
             });
-            divAllMatch.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    alertNotLogin();
-                }
-            });
-            divMyMatch.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    alertNotLogin();
-                }
-            });
-            divBooking.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    alertNotLogin();
-                }
-            });
+//            divAllMatch.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    alertNotLogin();
+//                }
+//            });
+//            divMyMatch.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    alertNotLogin();
+//                }
+//            });
+//            divBooking.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    alertNotLogin();
+//                }
+//            });
         }
 
 
@@ -155,22 +158,22 @@ public class MainDashboardActivity extends AppCompatActivity {
         ivVolley = findViewById(R.id.ivVolley);
         Glide.with(this).load(R.drawable.coming_soon).into(ivVolley);
 
-        divAllMatch = findViewById(R.id.divAllMatch);
-        divAllMatch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainDashboardActivity.this, AllMatchActivity.class);
-                startActivity(intent);
-            }
-        });
-        divMyMatch = findViewById(R.id.divMyMatch);
-        divMyMatch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainDashboardActivity.this, MyMatchActivity.class);
-                startActivity(intent);
-            }
-        });
+//        divAllMatch = findViewById(R.id.divAllMatch);
+//        divAllMatch.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainDashboardActivity.this, AllMatchActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+//        divMyMatch = findViewById(R.id.divMyMatch);
+//        divMyMatch.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainDashboardActivity.this, MyMatchActivity.class);
+//                startActivity(intent);
+//            }
+//        });
         divProfile = findViewById(R.id.divProfile);
         divProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -181,15 +184,15 @@ public class MainDashboardActivity extends AppCompatActivity {
             }
         });
 
-        divBooking = findViewById(R.id.divBooking);
-        divBooking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainDashboardActivity.this, HistoryBookingActivity.class);
-                intent.putExtra("Title", "Booking");
-                startActivity(intent);
-            }
-        });
+//        divBooking = findViewById(R.id.divBooking);
+//        divBooking.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainDashboardActivity.this, HistoryBookingActivity.class);
+//                intent.putExtra("Title", "Booking");
+//                startActivity(intent);
+//            }
+//        });
 
         divFutsal = findViewById(R.id.divFutsal);
         divFutsal.setOnClickListener(new View.OnClickListener() {
@@ -222,6 +225,15 @@ public class MainDashboardActivity extends AppCompatActivity {
 
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
         rv_Fields = findViewById(R.id.rv_Fields);
+
+
+        ImageButton imgbtn = findViewById(R.id.btnsearch);
+        imgbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getBaseContext(), "iso anj!!!!!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void categoryFutsal (String category){
