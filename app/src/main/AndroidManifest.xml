@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.user_profile"></activity>
+        <activity android:name=".nearby"></activity>
+        <activity android:name=".activities.user_profile" />
         <activity
             android:name=".activities.MyMatchActivity"
             android:theme="@style/AppThemeNoAcitonBar" />
@@ -82,7 +83,6 @@
         <activity
             android:name=".activities.DashboardActivity"
             android:theme="@style/AppThemeNoAcitonBar" />
-
     </application>
 
 </manifest>
