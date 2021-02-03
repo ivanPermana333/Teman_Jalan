@@ -231,7 +231,7 @@ public class MainDashboardActivity extends AppCompatActivity {
         imgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getBaseContext(), "iso anj!!!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "nearby comingsoon", Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -1,12 +1,19 @@
 package com.example.sportsclub.model;
 
-public class Booking {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Booking implements Parcelable {
     private String status;
     private String date;
     private String field;
     private String time;
     private String code;
+    private String idUser;
 
+    public String getIdUser() {
+        return idUser;
+    }
     public String getTotalPrice() {
         return totalPrice;
     }
@@ -56,4 +63,47 @@ public class Booking {
     public void setTime(String time) {
         this.time = time;
     }
+
+    public static final Parcelable.Creator<Booking> CREATOR = new Parcelable.Creator<Booking>() {
+        @Override
+        public Booking createFromParcel(Parcel in) {
+            return new Booking(in);
+        }
+
+        @Override
+        public Booking[] newArray(int size) {
+            return new Booking[size];
+        }
+    };
+
+    public Booking(Parcel in) {
+        status = in.readString();
+        date= in.readString();
+        field= in.readString();
+        time= in.readString();
+        code= in.readString();
+        idUser= in.readString();
+    }
+    public Booking() {
+
+    }
+
+    public static Parcelable.Creator<Booking> getCREATOR() {
+        return CREATOR;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(status);
+        parcel.writeString(date);
+        parcel.writeString(field);
+        parcel.writeString(time);
+        parcel.writeString(code);
+    }
+
 }

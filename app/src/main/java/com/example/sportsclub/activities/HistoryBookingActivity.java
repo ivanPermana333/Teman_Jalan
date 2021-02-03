@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
@@ -22,8 +23,9 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.sportsclub.Constants;
 import com.example.sportsclub.R;
 import com.example.sportsclub.adapters.BookingAdapter;
-import com.example.sportsclub.fragments.BookingFragment;
+import com.example.sportsclub.adapters.MatchAdapter;
 import com.example.sportsclub.model.Booking;
+import com.example.sportsclub.model.Match;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +39,7 @@ import static com.example.sportsclub.activities.SignInActivity.SHARED_PREFS;
 public class HistoryBookingActivity extends AppCompatActivity {
     public static final String TAG = HistoryBookingActivity.class.getSimpleName();
     private Toolbar toolbar;
+    private BookingAdapter adapterB;
     private RecyclerView rvBooking;
     private TextView mTitle;
     private ArrayList<Booking> list = new ArrayList<>();
@@ -52,8 +55,9 @@ public class HistoryBookingActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         String title = getIntent().getStringExtra("Title");
-        mTitle.setText(title);
+        mTitle.setText("History Booking");
         rvBooking.setHasFixedSize(true);
+        rvBooking.setLayoutManager(new LinearLayoutManager(this));
 
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         String id = sharedPreferences.getString(ID, "");
@@ -66,11 +70,21 @@ public class HistoryBookingActivity extends AppCompatActivity {
         rvBooking = findViewById(R.id.rv_booking);
         mTitle = toolbar.findViewById(R.id.toolbar_title);
     }
-
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
     public void showRecyclerList() {
-        rvBooking.setLayoutManager(new LinearLayoutManager(this));
-        BookingAdapter bookingAdapter = new BookingAdapter(list);
-        rvBooking.setAdapter(bookingAdapter);
+//        BookingAdapter bookingAdapter = new BookingAdapter(list);
+        adapterB = new BookingAdapter(HistoryBookingActivity.this, list);
+        rvBooking.setAdapter(adapterB);
+
+//        bookingAdapter.setOnItemClickCallback(new BookingAdapter.OnItemClickCallback() {
+//            @Override
+//            public void onItemClicked(Booking data) {
+//                showSelectedBooking(data);
+//            }
+//        });
     }
 
     public void fetchUserBookings(String id) {
@@ -116,10 +130,13 @@ public class HistoryBookingActivity extends AppCompatActivity {
                         Log.e(TAG, "onError: " + anError.getLocalizedMessage());
                     }
                 });
-    }
 
-    public boolean onSupportNavigateUp() {
-        finish();
-        return true;
     }
+//    private void showSelectedBooking(Booking booking) {
+//        Intent intent = new Intent(HistoryBookingActivity.this, DetailHistoryActivity.class);
+//        startActivity(intent);
+//        Toast.makeText(getBaseContext(), "iso ANJ!!", Toast.LENGTH_LONG).show();
+//    }
+
+
 }

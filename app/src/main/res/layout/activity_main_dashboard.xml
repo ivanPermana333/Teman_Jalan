@@ -39,7 +39,7 @@
                 android:layout_height="@dimen/_30sdp">
                 <ImageButton
                     android:id="@+id/btnsearch"
-                    android:src="@drawable/ic_search_black_24dp"
+                    android:src="@drawable/ic_baseline_location_on_24"
                     android:background="@drawable/bg_btn_circle"
                     android:layout_width="@dimen/_30sdp"
                     android:layout_height="@dimen/_30sdp"/>
@@ -69,43 +69,47 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:src="@color/colorPrimary"/>
+
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="288dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat"
+                        android:gravity="center"
                         android:paddingTop="@dimen/_1sdp"
                         android:paddingBottom="@dimen/_2sdp"
                         android:text="Hallo, "
                         android:textColor="@color/txtBlack"
                         android:textSize="@dimen/_11ssp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:fontFamily="@font/montserrat"/>
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/tvName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
                         android:paddingTop="@dimen/_1sdp"
                         android:paddingBottom="@dimen/_2sdp"
+                        android:text="Aditiya Ivan Permana"
                         android:textColor="@color/txtBlack"
                         android:textSize="@dimen/_12ssp"
-                        android:textStyle="bold"
-                        android:gravity="center"
-                        android:text="Aditiya Ivan Permana"
-                        android:fontFamily="@font/montserrat_bold"/>
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/tvEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/txtBlack"
-                        android:textSize="@dimen/_11ssp"
-                        android:textStyle="bold"
+                        android:fontFamily="@font/montserrat_bold"
                         android:gravity="center"
                         android:text="dummmy @mail.com"
-                        android:fontFamily="@font/montserrat_bold"/>
+                        android:textColor="@color/txtBlack"
+                        android:textSize="@dimen/_11ssp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>

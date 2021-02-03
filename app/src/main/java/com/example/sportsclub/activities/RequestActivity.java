@@ -27,8 +27,6 @@ import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.sportsclub.Constants;
 import com.example.sportsclub.R;
-import com.example.sportsclub.fragments.DatePickerFragment;
-import com.example.sportsclub.fragments.MatchFragment;
 import com.example.sportsclub.model.Field;
 import com.example.sportsclub.model.Match;
 
@@ -124,10 +122,10 @@ public class RequestActivity extends AppCompatActivity implements AdapterView.On
 
     }
 
-    public void getDate(View view) {
-        DialogFragment datePicker = new DatePickerFragment();
-        datePicker.show(getSupportFragmentManager(), "date picker");
-    }
+//    public void getDate(View view) {
+//        DialogFragment datePicker = new DatePickerFragment();
+//        datePicker.show(getSupportFragmentManager(), "date picker");
+//    }
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {

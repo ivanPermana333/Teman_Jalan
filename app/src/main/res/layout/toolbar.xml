@@ -1,16 +1,15 @@
 <com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_80sdp"
+    android:layout_height="@dimen/_90sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/wave_4"
-    app:elevation="0dp"
-    android:layout_marginTop="@dimen/_18sdp">
+    app:elevation="0dp">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="34dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
         <TextView
@@ -18,11 +17,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Teman jalan"
+            android:text="Teman Jalan"
             android:textColor="@color/txtWhite"
             android:textSize="@dimen/_14ssp" />
 
     </androidx.appcompat.widget.Toolbar>
+
 
 
 </com.google.android.material.appbar.AppBarLayout>

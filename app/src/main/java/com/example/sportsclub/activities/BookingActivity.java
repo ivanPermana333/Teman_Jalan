@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sportsclub.Constants;
@@ -54,6 +55,7 @@ public class BookingActivity extends AppCompatActivity {
     private String date, idField, open, close, text, id;
     private int countSelected, price, totalPrice;
     private String time[], bookedTime[], bookingTime[];
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +100,10 @@ public class BookingActivity extends AppCompatActivity {
                 }
             }
         }*/
+
+
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         btnbook.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -21,7 +21,6 @@ import com.example.sportsclub.model.Match;
 
 import org.json.JSONObject;
 
-import static com.example.sportsclub.fragments.AllMatchFragment.ID;
 
 public class AcceptActivity extends AppCompatActivity {
     public static final String TAG = AcceptActivity.class.getSimpleName();
@@ -46,7 +45,7 @@ public class AcceptActivity extends AppCompatActivity {
         mTitle.setText("Accept Match");
 
         Intent intent = getIntent();
-        String id = intent.getStringExtra(ID);
+//        String id = intent.getStringExtra(ID);
 
         btnAcc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +53,7 @@ public class AcceptActivity extends AppCompatActivity {
                 String nameTeam = edtNameTeam.getText().toString().trim();
 
                 AndroidNetworking.post(Constants.BASE_URL + "/api/acc/{id}")
-                        .addPathParameter("id", id)
+                        .addPathParameter("id")
                         .addBodyParameter("teamAcc", nameTeam)
                         .setPriority(Priority.MEDIUM)
                         .build()
