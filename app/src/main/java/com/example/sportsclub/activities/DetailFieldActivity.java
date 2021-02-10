@@ -34,6 +34,7 @@ public class DetailFieldActivity extends AppCompatActivity implements OnMapReady
     private ImageView imgField;
     private TextView tvTitle, tvPrice, tvAddress, tvJamOperasional;
     private String location;
+    //gi
 
     private ImageView divClose;
     private Button btnProkesNext;
