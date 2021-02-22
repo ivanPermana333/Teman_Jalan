@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    //divProfileTop
+    <LinearLayout
+        android:id="@+id/divProfileTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="@dimen/_20sdp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Rental Service"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="@color/nah"/>
+
+    </LinearLayout>
+
+    <!--    //pola-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/bottomPola"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="@dimen/_20sdp"-->
+    <!--        android:adjustViewBounds="true"-->
+    <!--        android:scaleType="fitXY"-->
+    <!--        android:src="@drawable/wave"/>-->
+
+    //divProfileButtom
+    <ScrollView
+        android:layout_below="@+id/divProfileTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/divProfileBottom"
+            android:layout_below="@+id/bottomPola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+            //Nama
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nama_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Nama"
+                android:theme="@style/ProfileText"
+                android:textColorHint="@color/colorPrimary"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_nama"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //Phone
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="No. Ponsel"
+                android:theme="@style/ProfileText"
+                android:textColorHint="@color/colorPrimary"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/_15sdp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            //Alamat
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/alamat_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Alamat"
+                android:theme="@style/ProfileText"
+                android:textColorHint="@color/colorPrimary"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_alamat"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvKTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="KTP"
+                android:textStyle="bold"
+                android:textSize="@dimen/_8ssp"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_8sdp"/>
+
+            <LinearLayout
+                android:id="@+id/DivKtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="@dimen/_15sdp">
+
+                <androidx.cardview.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    card_view:cardCornerRadius="@dimen/_3ssp"
+                    card_view:cardElevation="@dimen/_3ssp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:paddingBottom="0sp">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_170sdp"
+                                android:src="@drawable/placeholder"
+                                android:scaleType="centerCrop"
+                                android:layout_marginBottom="0dp"
+                                android:id="@+id/iv_Img"/>
+
+                        </FrameLayout>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <com.example.sportsclub.custom.CustomTextViewLight
+                    android:id="@+id/tvTap"
+                    android:textStyle="normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Tap image di atas untuk membuka memilih foto"
+                    android:textColor="#525151"
+                    android:layout_marginLeft="@dimen/_4ssp"
+                    android:textSize="@dimen/_8ssp" />
+
+            </LinearLayout>
+
+
+
+
+            <com.example.sportsclub.custom.CustomTextViewBold
+                android:id="@+id/tvUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_12ssp"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:text="SIMPAN"
+                android:background="@drawable/bg_rectangle_01b"
+                android:backgroundTint="@color/main_green_color"
+                android:textSize="@dimen/_12ssp"
+                android:textColor="#fff"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

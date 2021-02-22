@@ -90,7 +90,7 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MatchViewHol
             tvStatus = itemView.findViewById(R.id.tv_status);
             tvDate = itemView.findViewById(R.id.tv_date);
             tvField = itemView.findViewById(R.id.tv_field);
-            tvPhone = itemView.findViewById(R.id.tv_contact);
+//            tvPhone = itemView.findViewById(R.id.tv_contact);
             tvName = itemView.findViewById(R.id.tv_name);
             tvTeamReq = itemView.findViewById(R.id.tv_team_request);
             tvTeamAcc = itemView.findViewById(R.id.tv_team_accept);
