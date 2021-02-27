@@ -25,11 +25,11 @@ public class SignInActivity extends AppCompatActivity {
     public static final String TAG = SignInActivity.class.getSimpleName();
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String ID = "id";
-    public static final String NAME = "name";
+//    public static final String NAME = "name";
     public static final String EMAIL = "email";
     public static final String USERNAME = "username";
     public static final String PHONE = "phone";
-    public static final String ADDRESS = "address";
+//    public static final String ADDRESS = "address";
     public static final String TOKEN = "token";
     private Button btnSignIn;
     private EditText edtEmail, edtPassword;
@@ -44,7 +44,7 @@ public class SignInActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edt_email);
         edtPassword = findViewById(R.id.edt_password);
 
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences sharedPreferences =  getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         token = sharedPreferences.getString(TOKEN, "");
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
@@ -82,29 +82,29 @@ public class SignInActivity extends AppCompatActivity {
                                         if (status.equals("success")) {
                                             JSONObject data = response.getJSONObject("data");
                                             Log.d("RBA", "resultData: " + data.toString());
-                                            String name = data.getString("name");
+//                                            String name = data.getString("name");
                                             String id = data.getString("id");
                                             String email = data.getString("email");
                                             String username = data.getString("username");
                                             String phoneNumber = data.getString("phone");
-                                            String address = data.getString("address");
+//                                            String address = data.getString("address");
 
                                             SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
                                             SharedPreferences.Editor editor = sharedPreferences.edit();
 
                                             editor.putString(ID, id);
-                                            editor.putString(NAME, name);
+//                                            editor.putString(NAME, name);
                                             editor.putString(EMAIL, email);
                                             editor.putString(USERNAME, username);
                                             editor.putString(PHONE, phoneNumber);
-                                            editor.putString(ADDRESS, address);
+//                                            editor.putString(ADDRESS, address);
                                             editor.apply();
 
                                             Intent intent = new Intent(SignInActivity.this, MainDashboardActivity.class);
                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                             startActivity(intent);
 
-                                            Toast.makeText(SignInActivity.this, "Selamat datang " + name, Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(SignInActivity.this, "Selamat datang " + username, Toast.LENGTH_SHORT).show();
                                             finish();
                                         } else {
                                             Toast.makeText(SignInActivity.this, message, Toast.LENGTH_SHORT).show();
@@ -117,11 +117,11 @@ public class SignInActivity extends AppCompatActivity {
                                 @Override
                                 public void onError(ANError error) {
                                     // handle error
-                                    Log.d("RBA", "onError: " + error.getErrorBody());
-                                    Log.d("RBA", "onError: " + error.getLocalizedMessage());
-                                    Log.d("RBA", "onError: " + error.getErrorDetail());
-                                    Log.d("RBA", "onError: " + error.getResponse());
-                                    Log.d("RBA", "onError: " + error.getErrorCode());
+                                    Log.d("IVN", "onError: " + error.getErrorBody());
+                                    Log.d("IVN", "onError: " + error.getLocalizedMessage());
+                                    Log.d("IVN", "onError: " + error.getErrorDetail());
+                                    Log.d("IVN", "onError: " + error.getResponse());
+                                    Log.d("IVN", "onError: " + error.getErrorCode());
                                 }
                             });
                 }

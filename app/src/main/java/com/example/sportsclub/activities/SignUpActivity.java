@@ -22,10 +22,10 @@ import com.example.sportsclub.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.example.sportsclub.activities.SignInActivity.ADDRESS;
+//import static com.example.sportsclub.activities.SignInActivity.ADDRESS;
 import static com.example.sportsclub.activities.SignInActivity.EMAIL;
 import static com.example.sportsclub.activities.SignInActivity.ID;
-import static com.example.sportsclub.activities.SignInActivity.NAME;
+//import static com.example.sportsclub.activities.SignInActivity.NAME;
 import static com.example.sportsclub.activities.SignInActivity.PHONE;
 import static com.example.sportsclub.activities.SignInActivity.SHARED_PREFS;
 import static com.example.sportsclub.activities.SignInActivity.TOKEN;
@@ -35,7 +35,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public static final String TAG = SignUpActivity.class.getSimpleName();
     private ProgressBar progressBar;
     private Button btnSignUp;
-    private EditText edtUsername, edtName, edtAddress, edtPhoneNumber, edtEmail, edtPassword, edtConfirmPassword;
+    private EditText edtUsername, edtPhoneNumber, edtEmail, edtPassword, edtConfirmPassword;
     private String token;
 
     @Override
@@ -45,8 +45,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         btnSignUp = findViewById(R.id.btn_sign_up);
         edtUsername = findViewById(R.id.edt_username);
-        edtName = findViewById(R.id.edt_name);
-        edtAddress = findViewById(R.id.edt_address);
+//        edtName = findViewById(R.id.edt_name);
+//        edtAddress = findViewById(R.id.edt_address);
         edtPhoneNumber = findViewById(R.id.edt_phone_number);
         edtEmail = findViewById(R.id.edt_email);
         edtPassword = findViewById(R.id.edt_password);
@@ -63,8 +63,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             token = sharedPreferences.getString(TOKEN, "");
 
             String inputUsername = edtUsername.getText().toString().trim();
-            String inputName = edtName.getText().toString().trim();
-            String inputAddress = edtAddress.getText().toString().trim();
+//            String inputName = edtName.getText().toString().trim();
+//            String inputAddress = edtAddress.getText().toString().trim();
             String inputPhoneNumber = edtPhoneNumber.getText().toString().trim();
             String inputEmail = edtEmail.getText().toString().trim();
             String inputPassword = edtPassword.getText().toString().trim();
@@ -78,15 +78,15 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 edtUsername.setError("Username harus diisi");
             }
 
-            if (inputName.isEmpty()) {
-                isEmpty = true;
-                edtName.setError("Name harus diisi");
-            }
-
-            if (inputAddress.isEmpty()) {
-                isEmpty = true;
-                edtAddress.setError("Address harus diisi");
-            }
+//            if (inputName.isEmpty()) {
+//                isEmpty = true;
+//                edtName.setError("Name harus diisi");
+//            }
+//
+//            if (inputAddress.isEmpty()) {
+//                isEmpty = true;
+//                edtAddress.setError("Address harus diisi");
+//            }
 
             if (inputPhoneNumber.isEmpty()) {
                 isEmpty = true;
@@ -118,8 +118,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 progressBar.setVisibility(View.VISIBLE);
                 AndroidNetworking.post(Constants.BASE_URL + "/api/register")
                         .addBodyParameter("username", inputUsername)
-                        .addBodyParameter("name", inputName)
-                        .addBodyParameter("address", inputAddress)
+//                        .addBodyParameter("name", inputName)
+//                        .addBodyParameter("address", inputAddress)
                         .addBodyParameter("phone", inputPhoneNumber)
                         .addBodyParameter("email", inputEmail)
                         .addBodyParameter("password", inputPassword)
@@ -135,31 +135,27 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                                     String message = response.getString("message");
                                     if (status.equals("success")) {
                                         JSONObject data = response.getJSONObject("data");
-                                        String name = data.getString("name");
                                         String id = data.getString("id");
                                         String email = data.getString("email");
                                         String username = data.getString("username");
                                         String phoneNumber = data.getString("phone");
-                                        String address = data.getString("address");
                                         System.out.println("data : " + data);
-                                        System.out.println("name : " + name);
+                                        System.out.println("username : " + username);
 
                                         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
                                         SharedPreferences.Editor editor = sharedPreferences.edit();
 
                                         editor.putString(ID, id);
-                                        editor.putString(NAME, name);
                                         editor.putString(EMAIL, email);
                                         editor.putString(USERNAME, username);
                                         editor.putString(PHONE, phoneNumber);
-                                        editor.putString(ADDRESS, address);
                                         editor.apply();
 
-                                        Intent intent = new Intent(SignUpActivity.this, MainDashboardActivity.class);
+                                        Intent intent = new Intent(SignUpActivity.this, VerifyActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
 
-                                        Toast.makeText(SignUpActivity.this, "Selamat datang " + name, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(SignUpActivity.this, "Selamat datang " + username, Toast.LENGTH_SHORT).show();
                                         finish();
                                     } else {
                                         Toast.makeText(SignUpActivity.this, message, Toast.LENGTH_SHORT).show();

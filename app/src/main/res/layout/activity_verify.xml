@@ -199,7 +199,7 @@
                 android:layout_marginHorizontal="@dimen/_15sdp"
                 android:text="SIMPAN"
                 android:background="@drawable/bg_rectangle_01b"
-                android:backgroundTint="@color/main_green_color"
+                android:backgroundTint="@color/nah"
                 android:textSize="@dimen/_12ssp"
                 android:textColor="#fff"
                 android:textStyle="bold"/>

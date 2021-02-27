@@ -72,10 +72,10 @@ public class FieldAdapter extends RecyclerView.Adapter<FieldAdapter.FieldViewHol
 
         public FieldViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.item_field_img);
-            tvName = itemView.findViewById(R.id.item_field_title);
-            tvAddress = itemView.findViewById(R.id.item_field_address);
-            tvPrice = itemView.findViewById(R.id.item_field_price);
+            imgPhoto = itemView.findViewById(R.id.item_teman_img);
+            tvName = itemView.findViewById(R.id.detail_teman_title);
+            tvAddress = itemView.findViewById(R.id.item_teman_address);
+            tvPrice = itemView.findViewById(R.id.item_teman_price);
         }
     }
 

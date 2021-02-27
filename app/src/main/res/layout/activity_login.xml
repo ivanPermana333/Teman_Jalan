@@ -39,13 +39,14 @@
             android:layout_height="match_parent"
             android:layout_above="@+id/divBottom"
             >
+
             <ImageView
+                android:layout_width="255dp"
+                android:layout_height="154dp"
                 android:layout_centerInParent="true"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="32dp"
-                    android:src="@drawable/ic_torch" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="32dp"
+                android:src="@drawable/teman" />
 
             <TextView
                 android:id="@+id/tvSkip"

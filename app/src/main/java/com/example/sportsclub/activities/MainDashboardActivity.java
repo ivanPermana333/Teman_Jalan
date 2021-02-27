@@ -24,7 +24,9 @@ import com.example.sportsclub.Constants;
 import com.example.sportsclub.R;
 import com.example.sportsclub.activities.DetailFieldActivity;
 import com.example.sportsclub.adapters.FieldAdapter;
+import com.example.sportsclub.adapters.TemanAdapter;
 import com.example.sportsclub.model.Field;
+import com.example.sportsclub.model.Teman;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 import org.json.JSONArray;
@@ -41,22 +43,23 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 import static com.example.sportsclub.activities.SignInActivity.EMAIL;
 import static com.example.sportsclub.activities.SignInActivity.ID;
-import static com.example.sportsclub.activities.SignInActivity.NAME;
+//import static com.example.sportsclub.activities.SignInActivity.NAME;
+import static com.example.sportsclub.activities.SignInActivity.USERNAME;
 import static com.example.sportsclub.activities.SignInActivity.SHARED_PREFS;
 import static xdroid.toaster.Toaster.toast;
 
 public class MainDashboardActivity extends AppCompatActivity {
     private ImageButton imgbtn,divBooking;
-    private TextView tvDateToday, tvResultCategory, tvName, tvEmail, tvCondition;
+    private TextView tvDateToday, tvResultFriends, tvName, tvEmail, tvCondition;
     private LinearLayout divAllMatch, divMyMatch,  divFutsal, divBuluTangkis, divVolley;
-    private CircleImageView ivFutsal, ivBuluTangkis, ivVolley;
+//    private CircleImageView ivFutsal, ivBuluTangkis, ivVolley;
     private ImageView ivReload, divProfile;
     private ShimmerFrameLayout mShimmerViewContainer;
-    private RecyclerView rv_Fields;
-    private String sResultByCategory = "";
+    private RecyclerView rv_Temans;
+    private String sResultByTop = "";
 
-    private ArrayList<Field> list = new ArrayList<>();
-    private FieldAdapter fieldAdapter;
+    private ArrayList<Teman> list = new ArrayList<>();
+    private TemanAdapter temanAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +68,8 @@ public class MainDashboardActivity extends AppCompatActivity {
         binding();
 
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        if (!sharedPreferences.getString(NAME, "").isEmpty()){
-            tvName.setText(sharedPreferences.getString(NAME, ""));
+        if (!sharedPreferences.getString(USERNAME, "").isEmpty()){
+            tvName.setText(sharedPreferences.getString(USERNAME, ""));
             tvEmail.setText(sharedPreferences.getString(EMAIL, ""));
         }else {
             tvName.setText("Anda belum login, Silahkan login untuk akses fitur lebih, Klik untuk login");
@@ -104,26 +107,100 @@ public class MainDashboardActivity extends AppCompatActivity {
 
 
 
-        sResultByCategory = Constants.CATEGORY_FUTSAL;
-        tvResultCategory.setText(sResultByCategory);
+        sResultByTop = Constants.CATEGORY_TOP_5;
+        tvResultFriends.setText(sResultByTop);
 
-        fetchFields(sResultByCategory);
+        fetchFriends(sResultByTop);
 
         ivReload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mShimmerViewContainer.startShimmer();
                 mShimmerViewContainer.setVisibility(View.VISIBLE);
-                rv_Fields.setVisibility(View.GONE);
+                rv_Temans.setVisibility(View.GONE);
                 tvCondition.setVisibility(View.GONE);
                 ivReload.setVisibility(View.GONE);
-                fetchFields(sResultByCategory);
+                fetchFriends(sResultByTop);
             }
         });
 
-        rv_Fields.setHasFixedSize(true);
-        rv_Fields.setLayoutManager(new LinearLayoutManager(this));
-        rv_Fields.setNestedScrollingEnabled(false);
+        rv_Temans.setHasFixedSize(true);
+        rv_Temans.setLayoutManager(new LinearLayoutManager(this));
+        rv_Temans.setNestedScrollingEnabled(false);
+
+    }
+
+    private void fetchFriends(String sResultByTop) {
+        AndroidNetworking.get(Constants.BASE_URL + "/api/temans")
+//                .addPathParameter("category", category)
+                .setPriority(Priority.HIGH)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            if (temanAdapter != null) {
+                                temanAdapter.clearData();
+                                temanAdapter.notifyDataSetChanged();
+                            }
+                            if (list != null)  list.clear();
+
+                            JSONArray data = response.getJSONArray("data");
+                            if(data == null) {
+                                toast("Tidak ada data");
+                                return;
+                            }
+                            System.out.println("Debug : " + data);
+                            if (data.length() <= 0){
+                                tvCondition.setVisibility(View.VISIBLE);
+                                tvCondition.setText(Constants.TEXT_LOAD_NOL);
+                                ivReload.setVisibility(View.GONE);
+                                rv_Temans.setVisibility(View.GONE);
+                                mShimmerViewContainer.stopShimmer();
+                                mShimmerViewContainer.setVisibility(View.GONE);
+                            }else{
+                                for (int position = 0; position < data.length(); position++) {
+                                    JSONObject teman = data.getJSONObject(position);
+                                    Teman item = new Teman();
+                                    item.setId(teman.getString("id"));
+//                                    item.setName(teman.getString("name"));
+                                    item.setAddress(teman.getString("address"));
+                                    item.setUsername(teman.getString("username"));
+                                    item.setPrice(teman.getString("price"));
+                                    item.setPhoto(Constants.BASE_URL + "/storage/" + teman.getString("picture"));
+                                    item.setLocation(teman.getString("location"));
+                                    item.setOpen(teman.getString("open"));
+                                    item.setClose(teman.getString("close"));
+                                    list.add(item);
+                                }
+                                showRecycler();
+
+                                mShimmerViewContainer.stopShimmer();
+                                mShimmerViewContainer.setVisibility(View.GONE);
+                                rv_Temans.setVisibility(View.VISIBLE);
+                                tvCondition.setVisibility(View.GONE);
+                                ivReload.setVisibility(View.GONE);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        mShimmerViewContainer.stopShimmer();
+                        mShimmerViewContainer.setVisibility(View.GONE);
+                        rv_Temans.setVisibility(View.GONE);
+                        tvCondition.setVisibility(View.VISIBLE);
+                        tvCondition.setText(Constants.TEXT_GAGAL_MEMUAT);
+                        ivReload.setVisibility(View.VISIBLE);
+                        Log.d("RBA", "onError: " + anError.getErrorBody());
+                        Log.d("RBA", "onError: " + anError.getLocalizedMessage());
+                        Log.d("RBA", "onError: " + anError.getErrorDetail());
+                        Log.d("RBA", "onError: " + anError.getResponse());
+                        Log.d("RBA", "onError: " + anError.getErrorCode());
+                    }
+                });
 
     }
 
@@ -151,12 +228,12 @@ public class MainDashboardActivity extends AppCompatActivity {
     private void binding (){
         tvDateToday = findViewById(R.id.tvDateToday);
         tvDateToday.setText(new SimpleDateFormat("EEE, dd-MM-yyyy", Locale.getDefault()).format(new Date()));
-        ivFutsal = findViewById(R.id.ivFutsal);
-        Glide.with(this).load(R.drawable.item_photo2).into(ivFutsal);
-        ivBuluTangkis = findViewById(R.id.ivBuluTangkis);
-        Glide.with(this).load(R.drawable.coming_soon).into(ivBuluTangkis);
-        ivVolley = findViewById(R.id.ivVolley);
-        Glide.with(this).load(R.drawable.coming_soon).into(ivVolley);
+//        ivFutsal = findViewById(R.id.ivFutsal);
+//        Glide.with(this).load(R.drawable.item_photo2).into(ivFutsal);
+//        ivBuluTangkis = findViewById(R.id.ivBuluTangkis);
+//        Glide.with(this).load(R.drawable.coming_soon).into(ivBuluTangkis);
+//        ivVolley = findViewById(R.id.ivVolley);
+//        Glide.with(this).load(R.drawable.coming_soon).into(ivVolley);
 
 //        divAllMatch = findViewById(R.id.divAllMatch);
 //        divAllMatch.setOnClickListener(new View.OnClickListener() {
@@ -194,37 +271,37 @@ public class MainDashboardActivity extends AppCompatActivity {
             }
         });
 
-        divFutsal = findViewById(R.id.divFutsal);
-        divFutsal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                categoryFutsal(Constants.CATEGORY_FUTSAL);
-            }
-        });
-        divBuluTangkis = findViewById(R.id.divBuluTangkis);
-        divBuluTangkis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                categoryBadminton(Constants.CATEGORY_BADMINTON);
-            }
-        });
-        divVolley = findViewById(R.id.divVolley);
-        divVolley.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                categoryVolley(Constants.CATEGORY_VOLLEY);
-            }
-        });
+//        divFutsal = findViewById(R.id.divFutsal);
+//        divFutsal.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Result(Constants.CATEGORY_TOP_5);
+//            }
+//        });
+//        divBuluTangkis = findViewById(R.id.divBuluTangkis);
+//        divBuluTangkis.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                categoryBadminton(Constants.CATEGORY_BADMINTON);
+//            }
+//        });
+//        divVolley = findViewById(R.id.divVolley);
+//        divVolley.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                categoryVolley(Constants.CATEGORY_VOLLEY);
+//            }
+//        });
 
 
         tvName = findViewById(R.id.tvName);
         tvEmail = findViewById(R.id.tvEmail);
-        tvResultCategory = findViewById(R.id.tvResultCategory);
+        tvResultFriends = findViewById(R.id.tvResult);
         tvCondition = findViewById(R.id.tvCondition);
         ivReload = findViewById(R.id.ivReload);
 
         mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
-        rv_Fields = findViewById(R.id.rv_Fields);
+        rv_Temans = findViewById(R.id.rv_Temans);
 
 
         ImageButton imgbtn = findViewById(R.id.btnsearch);
@@ -236,118 +313,46 @@ public class MainDashboardActivity extends AppCompatActivity {
         });
     }
 
-    private void categoryFutsal (String category){
-        sResultByCategory = category;
-        tvResultCategory.setText(category);
-        fetchFields(category);
+    private void Result (String Result){
+        sResultByTop = Result;
+        tvResultFriends.setText(Result);
+        fetchFriends(Result);
     }
 
-    private void categoryVolley (String category){
-//        sResultByCategory = category;
-//        tvResultCategory.setText(category);
-//        fetchFields(category);
-        toast("Fitur sedang dalam pengembangan");
-    }
-
-    private void categoryBadminton (String category){
-//        sResultByCategory = category;
-//        tvResultCategory.setText(category);
-//        fetchFields(category);
-        toast("Fitur sedang dalam pengembangan");
-
-    }
+//    private void categoryVolley (String category){
+////        sResultByCategory = category;
+////        tvResultCategory.setText(category);
+////        fetchFields(category);
+//        toast("Fitur sedang dalam pengembangan");
+//    }
+//
+//    private void categoryBadminton (String category){
+////        sResultByCategory = category;
+////        tvResultCategory.setText(category);
+////        fetchFields(category);
+//        toast("Fitur sedang dalam pengembangan");
+//
+//    }
 
     private void showRecycler() {
-        rv_Fields.setLayoutManager(new LinearLayoutManager(this));
-        fieldAdapter = new FieldAdapter(list);
-        rv_Fields.setAdapter(fieldAdapter);
+        rv_Temans.setLayoutManager(new LinearLayoutManager(this));
+        temanAdapter = new TemanAdapter(list);
+        rv_Temans.setAdapter(temanAdapter);
 
-        fieldAdapter.setOnItemClickCallback(new FieldAdapter.OnItemClickCallback() {
+        temanAdapter.setOnItemClickCallback(new TemanAdapter.OnItemClickCallback() {
             @Override
-            public void onItemClicked(Field data) {
-                showSelectedField(data);
+            public void onItemClicked(Teman data) {
+                showSelectedTeman(data);
             }
         });
     }
 
-    private void showSelectedField(Field field) {
+    private void showSelectedTeman(Teman teman) {
 //        Toast.makeText(this, "Kamu memilih " + field.getName(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, DetailFieldActivity.class);
         intent.putExtra("test", list);
-        intent.putExtra("Item Data", field);
+        intent.putExtra("Item Data", teman);
         startActivity(intent);
-    }
-
-    public void fetchFields(String category) {
-        AndroidNetworking.get(Constants.BASE_URL + "/api/fields/{category}")
-                .addPathParameter("category", category)
-                .setPriority(Priority.HIGH)
-                .build()
-                .getAsJSONObject(new JSONObjectRequestListener() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            if (fieldAdapter != null) {
-                                fieldAdapter.clearData();
-                                fieldAdapter.notifyDataSetChanged();
-                            }
-                            if (list != null)  list.clear();
-
-                            JSONArray data = response.getJSONArray("data");
-                            if(data == null) {
-                                toast("Tidak ada data");
-                                return;
-                            }
-                            System.out.println("Debug : " + data);
-                            if (data.length() <= 0){
-                                tvCondition.setVisibility(View.VISIBLE);
-                                tvCondition.setText(Constants.TEXT_LOAD_NOL);
-                                ivReload.setVisibility(View.GONE);
-                                rv_Fields.setVisibility(View.GONE);
-                                mShimmerViewContainer.stopShimmer();
-                                mShimmerViewContainer.setVisibility(View.GONE);
-                            }else{
-                                for (int position = 0; position < data.length(); position++) {
-                                    JSONObject field = data.getJSONObject(position);
-                                    Field item = new Field();
-                                    item.setId(field.getString("id"));
-                                    item.setName(field.getString("name"));
-                                    item.setAddress(field.getString("address"));
-                                    item.setPrice(field.getString("price"));
-                                    item.setPhoto(Constants.BASE_URL + "/storage/" + field.getString("picture"));
-                                    item.setLocation(field.getString("location"));
-                                    item.setOpen(field.getString("open"));
-                                    item.setClose(field.getString("close"));
-                                    list.add(item);
-                                }
-                                showRecycler();
-
-                                mShimmerViewContainer.stopShimmer();
-                                mShimmerViewContainer.setVisibility(View.GONE);
-                                rv_Fields.setVisibility(View.VISIBLE);
-                                tvCondition.setVisibility(View.GONE);
-                                ivReload.setVisibility(View.GONE);
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void onError(ANError anError) {
-                        mShimmerViewContainer.stopShimmer();
-                        mShimmerViewContainer.setVisibility(View.GONE);
-                        rv_Fields.setVisibility(View.GONE);
-                        tvCondition.setVisibility(View.VISIBLE);
-                        tvCondition.setText(Constants.TEXT_GAGAL_MEMUAT);
-                        ivReload.setVisibility(View.VISIBLE);
-                        Log.d("RBA", "onError: " + anError.getErrorBody());
-                        Log.d("RBA", "onError: " + anError.getLocalizedMessage());
-                        Log.d("RBA", "onError: " + anError.getErrorDetail());
-                        Log.d("RBA", "onError: " + anError.getResponse());
-                        Log.d("RBA", "onError: " + anError.getErrorCode());
-                    }
-                });
     }
 
     @Override

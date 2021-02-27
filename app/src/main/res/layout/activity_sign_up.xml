@@ -43,14 +43,14 @@
                 android:visibility="invisible" />
 
             <ImageView
-                android:src="@drawable/ic_torch"
+                android:layout_width="275dp"
+                android:layout_height="144dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="@dimen/_160sdp"
-                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_50ssp"
+                android:layout_marginBottom="0sp"
                 android:scaleX="0.7"
                 android:scaleY="0.7"
-                android:layout_marginBottom="0sp"
-                android:layout_marginTop="@dimen/_50ssp"/>
+                android:src="@drawable/teman" />
 
         </LinearLayout>
 
@@ -100,55 +100,55 @@
                     android:textSize="@dimen/_14ssp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="@dimen/_6ssp"
-                android:textColorHint="#c5c5c5">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="0dp"-->
+<!--                android:layout_marginBottom="@dimen/_6ssp"-->
+<!--                android:textColorHint="#c5c5c5">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords"
-                    android:hint="Name"
-                    android:imeOptions="actionDone"
-                    android:drawableLeft="@drawable/ic_email_24"
-                    android:drawablePadding="@dimen/_8ssp"
-                    android:drawableTint="#c5c5c5"
-                    android:shadowColor="#c5c5c5"
-                    android:textColorHighlight="#c5c5c5"
-                    android:textColorHint="#c5c5c5"
-                    android:textColorLink="#c5c5c5"
-                    android:textSize="@dimen/_14ssp"
-                    android:background="#ffffff"/>
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/edt_name"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="textCapWords"-->
+<!--                    android:hint="Name"-->
+<!--                    android:imeOptions="actionDone"-->
+<!--                    android:drawableLeft="@drawable/ic_email_24"-->
+<!--                    android:drawablePadding="@dimen/_8ssp"-->
+<!--                    android:drawableTint="#c5c5c5"-->
+<!--                    android:shadowColor="#c5c5c5"-->
+<!--                    android:textColorHighlight="#c5c5c5"-->
+<!--                    android:textColorHint="#c5c5c5"-->
+<!--                    android:textColorLink="#c5c5c5"-->
+<!--                    android:textSize="@dimen/_14ssp"-->
+<!--                    android:background="#ffffff"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="@dimen/_6ssp"
-                android:textColorHint="#c5c5c5">
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="0dp"-->
+<!--                android:layout_marginBottom="@dimen/_6ssp"-->
+<!--                android:textColorHint="#c5c5c5">-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords"
-                    android:hint="Address"
-                    android:imeOptions="actionDone"
-                    android:drawableLeft="@drawable/ic_email_24"
-                    android:drawablePadding="@dimen/_8ssp"
-                    android:drawableTint="#c5c5c5"
-                    android:shadowColor="#c5c5c5"
-                    android:textColorHighlight="#c5c5c5"
-                    android:textColorHint="#c5c5c5"
-                    android:textColorLink="#c5c5c5"
-                    android:textSize="@dimen/_14ssp"
-                    android:background="#ffffff"/>
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:id="@+id/edt_address"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:inputType="textCapWords"-->
+<!--                    android:hint="Address"-->
+<!--                    android:imeOptions="actionDone"-->
+<!--                    android:drawableLeft="@drawable/ic_email_24"-->
+<!--                    android:drawablePadding="@dimen/_8ssp"-->
+<!--                    android:drawableTint="#c5c5c5"-->
+<!--                    android:shadowColor="#c5c5c5"-->
+<!--                    android:textColorHighlight="#c5c5c5"-->
+<!--                    android:textColorHint="#c5c5c5"-->
+<!--                    android:textColorLink="#c5c5c5"-->
+<!--                    android:textSize="@dimen/_14ssp"-->
+<!--                    android:background="#ffffff"/>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"

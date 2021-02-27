@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.sportsclub.R;
 import com.example.sportsclub.model.Field;
+import com.example.sportsclub.model.Teman;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -24,14 +25,15 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
-import static com.example.sportsclub.activities.SignInActivity.NAME;
+//import static com.example.sportsclub.activities.SignInActivity.NAME;
+import static com.example.sportsclub.activities.SignInActivity.USERNAME;
 import static com.example.sportsclub.activities.SignInActivity.SHARED_PREFS;
 
 public class DetailFieldActivity extends AppCompatActivity implements OnMapReadyCallback {
     private Toolbar toolbar;
     private GoogleMap mMap;
     private Button btnbooking;
-    private ImageView imgField;
+    private ImageView imgteman;
     private TextView tvTitle, tvPrice, tvAddress, tvJamOperasional;
     private String location;
     //gi
@@ -48,10 +50,10 @@ public class DetailFieldActivity extends AppCompatActivity implements OnMapReady
         toolbar = findViewById(R.id.toolbar);
         TextView mTitle = toolbar.findViewById(R.id.toolbar_title);
         btnbooking = findViewById(R.id.btn_booking);
-        imgField = findViewById(R.id.detail_field_img);
-        tvTitle = findViewById(R.id.detail_field_title);
-        tvPrice = findViewById(R.id.item_field_price);
-        tvAddress = findViewById(R.id.item_field_address);
+        imgteman = findViewById(R.id.detail_teman_img);
+        tvTitle = findViewById(R.id.detail_teman_title);
+        tvPrice = findViewById(R.id.item_teman_price);
+        tvAddress = findViewById(R.id.item_teman_address);
         tvJamOperasional = findViewById(R.id.tvJamOperasional);
         divClose = findViewById(R.id.divClose);
         btnProkesNext = findViewById(R.id.btnProkesNext);
@@ -61,19 +63,19 @@ public class DetailFieldActivity extends AppCompatActivity implements OnMapReady
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        mTitle.setText("Detail Field");
+        mTitle.setText("Detail Teman");
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
         Intent intent = getIntent();
-        final Field itemData = intent.getParcelableExtra("Item Data");
+        final Teman itemData = intent.getParcelableExtra("Item Data");
 
-        final String idField = itemData.getId();
+        final String idTeman = itemData.getId();
         Glide.with(this)
                 .load(itemData.getPhoto())
-                .into(imgField);
+                .into(imgteman);
         tvTitle.setText(itemData.getName());
         tvPrice.setText(itemData.getPrice());
         tvAddress.setText(itemData.getAddress());
@@ -81,7 +83,7 @@ public class DetailFieldActivity extends AppCompatActivity implements OnMapReady
         tvJamOperasional.setText(itemData.getOpen() + " - " + itemData.getClose());
 
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        if (!sharedPreferences.getString(NAME, "").isEmpty()){
+        if (!sharedPreferences.getString(USERNAME, "").isEmpty()){
             btnbooking.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

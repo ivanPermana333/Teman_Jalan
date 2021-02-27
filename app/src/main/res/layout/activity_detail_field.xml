@@ -40,7 +40,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/detail_field_img"
+                            android:id="@+id/detail_teman_img"
                             android:layout_width="match_parent"
                             android:layout_height="370dp"
                             android:layout_marginBottom="8dp"
@@ -48,7 +48,7 @@
                             android:src="@drawable/champeone" />
 
                         <TextView
-                            android:id="@+id/detail_field_title"
+                            android:id="@+id/detail_teman_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
@@ -59,7 +59,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/item_field_price"
+                            android:id="@+id/item_teman_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
@@ -144,7 +144,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/item_field_address"
+                            android:id="@+id/item_teman_address"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"

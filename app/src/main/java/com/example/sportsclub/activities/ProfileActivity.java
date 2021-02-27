@@ -24,10 +24,10 @@ import com.example.sportsclub.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.example.sportsclub.activities.SignInActivity.ADDRESS;
+//import static com.example.sportsclub.activities.SignInActivity.ADDRESS;
 import static com.example.sportsclub.activities.SignInActivity.EMAIL;
 import static com.example.sportsclub.activities.SignInActivity.ID;
-import static com.example.sportsclub.activities.SignInActivity.NAME;
+//import static com.example.sportsclub.activities.SignInActivity.NAME;
 import static com.example.sportsclub.activities.SignInActivity.PHONE;
 import static com.example.sportsclub.activities.SignInActivity.SHARED_PREFS;
 import static com.example.sportsclub.activities.SignInActivity.USERNAME;
@@ -124,11 +124,11 @@ public class ProfileActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(ANError anError) {
-                        et_nama.setText(sharedPreferences.getString(NAME, ""));
+//                        et_nama.setText(sharedPreferences.getString(NAME, ""));
                         et_username.setText(sharedPreferences.getString(USERNAME, ""));
                         et_email.setText(sharedPreferences.getString(EMAIL, ""));
                         et_phone.setText(sharedPreferences.getString(PHONE, ""));
-                        et_alamat.setText(sharedPreferences.getString(ADDRESS, ""));
+//                        et_alamat.setText(sharedPreferences.getString(ADDRESS, ""));
                     }
                 });
     }
