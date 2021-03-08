@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginTemanActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp">
+
+            <com.example.temanjalan.custom.CustomTextViewLight
+                android:id="@+id/tvAppVersion"
+                android:textSize="@dimen/_10ssp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="App version"
+                android:textColor="#c5c5c5"
+                android:padding="@dimen/_4ssp"
+                android:gravity="left"
+                android:visibility="invisible" />
+
+            <com.example.temanjalan.custom.CustomTextViewLight
+                android:id="@+id/tvServer"
+                android:textSize="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="App version"
+                android:textColor="#c5c5c5"
+                android:padding="@dimen/_4ssp"
+                android:gravity="left"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="275dp"
+                android:layout_height="144dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_50ssp"
+                android:layout_marginBottom="0sp"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
+                android:src="@drawable/teman" />
+
+        </LinearLayout>
+
+        <!-- neat trick to push the stuff below all the way to bottom -->
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+        <!-- divider -->
+        <!--View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" /-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_24ssp"
+            android:paddingRight="@dimen/_24ssp"
+            android:paddingBottom="@dimen/_2ssp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/_4ssp"
+                android:textColorHint="#c5c5c5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textAutoComplete"
+                    android:hint="Username"
+                    android:imeOptions="actionDone"
+                    android:drawableLeft="@drawable/ic_email_24"
+                    android:drawablePadding="@dimen/_8ssp"
+                    android:drawableTint="#c5c5c5"
+                    android:shadowColor="#c5c5c5"
+                    android:textColorHighlight="#c5c5c5"
+                    android:textColorHint="#c5c5c5"
+                    android:textColorLink="#c5c5c5"
+                    android:textSize="@dimen/_12ssp"
+                    android:background="#ffffff"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.example.temanjalan.custom.CustomTextViewLight
+                android:visibility="invisible"
+                android:id="@+id/tvRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginTop="5sp"
+                android:gravity="bottom|right"
+                android:text="Register"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_9ssp" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sign_in"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedbutton"
+            android:textColor="#fff"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:layout_marginBottom="@dimen/_3ssp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:padding="@dimen/_12ssp"
+            android:text="Login"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
+
+    </LinearLayout>
+
+</RelativeLayout>

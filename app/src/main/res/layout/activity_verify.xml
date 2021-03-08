@@ -174,7 +174,7 @@
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
-                <com.example.sportsclub.custom.CustomTextViewLight
+                <com.example.temanjalan.custom.CustomTextViewLight
                     android:id="@+id/tvTap"
                     android:textStyle="normal"
                     android:layout_width="wrap_content"
@@ -189,7 +189,7 @@
 
 
 
-            <com.example.sportsclub.custom.CustomTextViewBold
+            <com.example.temanjalan.custom.CustomTextViewBold
                 android:id="@+id/tvUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

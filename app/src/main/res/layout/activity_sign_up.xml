@@ -20,7 +20,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp">
 
-            <com.example.sportsclub.custom.CustomTextViewLight
+            <com.example.temanjalan.custom.CustomTextViewLight
                 android:id="@+id/tvAppVersion"
                 android:textSize="@dimen/_10ssp"
                 android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
                 android:gravity="left"
                 android:visibility="invisible" />
 
-            <com.example.sportsclub.custom.CustomTextViewLight
+            <com.example.temanjalan.custom.CustomTextViewLight
                 android:id="@+id/tvServer"
                 android:textSize="10sp"
                 android:layout_width="wrap_content"
@@ -100,55 +100,55 @@
                     android:textSize="@dimen/_14ssp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="0dp"-->
-<!--                android:layout_marginBottom="@dimen/_6ssp"-->
-<!--                android:textColorHint="#c5c5c5">-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/_6ssp"
+                android:textColorHint="#c5c5c5">
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:id="@+id/edt_name"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:inputType="textCapWords"-->
-<!--                    android:hint="Name"-->
-<!--                    android:imeOptions="actionDone"-->
-<!--                    android:drawableLeft="@drawable/ic_email_24"-->
-<!--                    android:drawablePadding="@dimen/_8ssp"-->
-<!--                    android:drawableTint="#c5c5c5"-->
-<!--                    android:shadowColor="#c5c5c5"-->
-<!--                    android:textColorHighlight="#c5c5c5"-->
-<!--                    android:textColorHint="#c5c5c5"-->
-<!--                    android:textColorLink="#c5c5c5"-->
-<!--                    android:textSize="@dimen/_14ssp"-->
-<!--                    android:background="#ffffff"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:hint="Name"
+                    android:imeOptions="actionDone"
+                    android:drawableLeft="@drawable/ic_email_24"
+                    android:drawablePadding="@dimen/_8ssp"
+                    android:drawableTint="#c5c5c5"
+                    android:shadowColor="#c5c5c5"
+                    android:textColorHighlight="#c5c5c5"
+                    android:textColorHint="#c5c5c5"
+                    android:textColorLink="#c5c5c5"
+                    android:textSize="@dimen/_14ssp"
+                    android:background="#ffffff"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="0dp"-->
-<!--                android:layout_marginBottom="@dimen/_6ssp"-->
-<!--                android:textColorHint="#c5c5c5">-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/_6ssp"
+                android:textColorHint="#c5c5c5">
 
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:id="@+id/edt_address"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:inputType="textCapWords"-->
-<!--                    android:hint="Address"-->
-<!--                    android:imeOptions="actionDone"-->
-<!--                    android:drawableLeft="@drawable/ic_email_24"-->
-<!--                    android:drawablePadding="@dimen/_8ssp"-->
-<!--                    android:drawableTint="#c5c5c5"-->
-<!--                    android:shadowColor="#c5c5c5"-->
-<!--                    android:textColorHighlight="#c5c5c5"-->
-<!--                    android:textColorHint="#c5c5c5"-->
-<!--                    android:textColorLink="#c5c5c5"-->
-<!--                    android:textSize="@dimen/_14ssp"-->
-<!--                    android:background="#ffffff"/>-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:hint="Address"
+                    android:imeOptions="actionDone"
+                    android:drawableLeft="@drawable/ic_email_24"
+                    android:drawablePadding="@dimen/_8ssp"
+                    android:drawableTint="#c5c5c5"
+                    android:shadowColor="#c5c5c5"
+                    android:textColorHighlight="#c5c5c5"
+                    android:textColorHint="#c5c5c5"
+                    android:textColorLink="#c5c5c5"
+                    android:textSize="@dimen/_14ssp"
+                    android:background="#ffffff"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
@@ -247,7 +247,7 @@
                     android:background="#ffffff"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.example.sportsclub.custom.CustomTextViewLight
+            <com.example.temanjalan.custom.CustomTextViewLight
                 android:id="@+id/tvLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:360138226188:android:5a4557c1181fe510ea4c29",
         "android_client_info": {
-          "package_name": "com.example.sportsclub"
+          "package_name": "com.example.temanjalan"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "360138226188-lf1a11o9rlnt2cirptf06ktfksr974e6.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.sportsclub",
+            "package_name": "com.example.temanjalan",
             "certificate_hash": "c6e9a959ed909caebf72a75a6ca002ca230c4933"
           }
         },

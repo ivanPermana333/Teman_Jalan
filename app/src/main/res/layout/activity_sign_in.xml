@@ -20,7 +20,7 @@
             android:paddingLeft="0dp"
             android:paddingRight="0dp">
 
-            <com.example.sportsclub.custom.CustomTextViewLight
+            <com.example.temanjalan.custom.CustomTextViewLight
                 android:id="@+id/tvAppVersion"
                 android:textSize="@dimen/_10ssp"
                 android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
                 android:gravity="left"
                 android:visibility="invisible" />
 
-            <com.example.sportsclub.custom.CustomTextViewLight
+            <com.example.temanjalan.custom.CustomTextViewLight
                 android:id="@+id/tvServer"
                 android:textSize="10sp"
                 android:layout_width="wrap_content"
@@ -123,7 +123,7 @@
                     android:background="#ffffff"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.example.sportsclub.custom.CustomTextViewLight
+            <com.example.temanjalan.custom.CustomTextViewLight
                 android:visibility="invisible"
                 android:id="@+id/tvRegister"
                 android:layout_width="wrap_content"

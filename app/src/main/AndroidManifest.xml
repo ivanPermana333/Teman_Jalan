@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.sportsclub">
+    package="com.example.temanjalan">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,7 +19,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.AllDatingActivity"></activity>
+        <activity android:name=".activities.Payment"></activity>
+        <activity android:name=".activities.LoginTemanActivity" />
+        <activity android:name=".activities.UserTemanActivity" />
+        <activity
+            android:name=".activities.SeeAllActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity android:name=".activities.AllDatingActivity" />
         <activity android:name=".activities.MyDatingActivity" />
         <activity android:name=".activities.TemanActivity" />
 
@@ -34,7 +40,8 @@
                 android:resource="@xml/picker_provider_paths" />
         </provider>
 
-        <activity android:name=".activities.VerifyActivity"
+        <activity
+            android:name=".activities.VerifyActivity"
             android:theme="@style/AppThemeNoAcitonBar">
 
             <!-- <intent-filter> -->

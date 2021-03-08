@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/_1sdp"
                 android:paddingBottom="@dimen/_2sdp"
-                android:text="Tetap Patuhi Protokol Kesehatan dan Tingkatkan Kewaspadaan Selama Melakukan Olahraga"
+                android:text="Tetap Patuhi Protokol Kesehatan dan Tingkatkan Kewaspadaan "
                 android:textColor="@color/txtBlack"
                 android:textSize="@dimen/_11ssp"
                 android:textStyle="bold"

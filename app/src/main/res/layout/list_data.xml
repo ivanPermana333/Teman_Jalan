@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_margin="@dimen/_5sdp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="@dimen/_4sdp"
+    card_view:cardElevation="@dimen/_4sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#fff">
+
+        <View
+            android:layout_width="@dimen/_2ssp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_marginTop="0sp"
+            android:background="@color/nah"
+            android:id="@+id/divBorder"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#fff"
+            android:paddingLeft="@dimen/_2ssp"
+            android:paddingTop="@dimen/_3ssp"
+            android:paddingBottom="@dimen/_5ssp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#fff">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvKode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_4sdp"
+                        android:textColor="#131313"
+                        android:textSize="@dimen/_17sdp"
+                        android:textStyle="bold"
+                        android:paddingLeft="@dimen/_2ssp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_3ssp"
+                        android:paddingBottom="@dimen/_1sdp"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="#363636"
+                        android:id="@+id/tvSession"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:paddingLeft="@dimen/_2ssp"
+                    android:paddingRight="@dimen/_2ssp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="@dimen/_5ssp"
+                        android:text="NAMA"
+                        android:textColor="#AAAAAA"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvNama"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="top"
+                        android:textAllCaps="true"
+                        android:textColor="@color/nah"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- open position -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:text="Customer"
+                        android:textColor="#aaaaaa"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        android:paddingTop="@dimen/_5ssp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_2ssp"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="#313131"
+                        android:textStyle="bold"
+                        android:id="@+id/txtemail1"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:text="Friends"
+                        android:textColor="#aaaaaa"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        android:paddingTop="@dimen/_5ssp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_2ssp"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="#313131"
+                        android:textStyle="bold"
+                        android:id="@+id/txtfriends"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:text="Date"
+                        android:textColor="#aaaaaa"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        android:paddingTop="@dimen/_5ssp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_2ssp"
+                        android:textSize="@dimen/_10sdp"
+                        android:textColor="#313131"
+                        android:textStyle="bold"
+                        android:id="@+id/txtdate"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

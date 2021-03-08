@@ -9,200 +9,211 @@
     tools:context=".activities.DetailFieldActivity">
 
 
-        <LinearLayout
+    <RelativeLayout
+        android:id="@+id/divTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/detail_temans_img"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/champeone" />
+
+        <ImageView
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:tint="@color/colorWhite"/>
+    </RelativeLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="0dp"
-        android:orientation="vertical">
-
-        <include layout="@layout/toolbar" />
-
-        <ScrollView
+        android:orientation="vertical"
+        android:background="@drawable/bg_card_top_round"
+        android:layout_marginTop="280dp">
+        <LinearLayout
+            android:id="@+id/divUtama"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:overScrollMode="never"
-            android:scrollbars="none">
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_18sdp"
+            android:paddingBottom="@dimen/_10sdp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/kategori_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Username"
+                android:theme="@style/ErrorText"
+                android:textColorHint="@color/colorPrimary"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:enabled="false"
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:text="alicechan"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Nama"
+                android:theme="@style/ErrorText"
+                android:textColorHint="@color/colorPrimary"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_name"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:text="Ivan Permana"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Bisa Jam"
+                android:theme="@style/ErrorText"
+                android:textColorHint="@color/colorPrimary"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_jamopsional"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:text="00.00 - 23.59"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Usia"
+                android:theme="@style/ErrorText"
+                android:textColorHint="@color/colorPrimary"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_umur"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:text="16 Tahun"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:hint="Alamat"
+                android:theme="@style/ErrorText"
+                android:textColorHint="@color/colorPrimary"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusTopEnd="3dp"
+                app:boxCornerRadiusTopStart="3dp">
+                <EditText
+                    android:id="@+id/et_alamat"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txtBlack"
+                    android:fontFamily="@font/sf_pro_display_medium"
+                    android:textStyle="bold"
+                    android:text="Desa Dummy Kec. Dummy Kab. Dummy"
+                    android:paddingBottom="@dimen/_15sdp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="bottom"
+                android:layout_gravity="right|bottom"
+                android:layout_marginRight="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    card_view:cardElevation="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/detail_teman_img"
-                            android:layout_width="match_parent"
-                            android:layout_height="370dp"
-                            android:layout_marginBottom="8dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/champeone" />
-
-                        <TextView
-                            android:id="@+id/detail_teman_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginBottom="8dp"
-                            android:text="Markass Sport Center"
-                            android:textColor="@android:color/primary_text_light"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/item_teman_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="Rp. 40.000"
-                            android:textColor="@android:color/holo_red_dark"
-                            android:textSize="14dp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:text="Rp. XXXXXX"
+                    android:textColor="@color/nah"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:layout_marginTop="@dimen/_5sdp"-->
+<!--                    android:paddingVertical="@dimen/_10sdp"-->
+<!--                    android:paddingHorizontal="@dimen/_10sdp"-->
+<!--                    android:background="@drawable/bg_round"-->
+<!--                    android:backgroundTint="@color/nah"-->
+<!--                    android:id="@+id/divBooking"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/montserrat_bold"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Book Now"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/_12ssp"-->
+<!--                    android:textStyle="bold" />-->
+                <Button
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:paddingVertical="@dimen/_10sdp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:background="@drawable/bg_round"
+                    android:backgroundTint="@color/nah"
+                    android:id="@+id/btn_booking"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    card_view:cardElevation="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="8dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/detail_field_schedule"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:text="Jam Operasional"
-                            android:textColor="@android:color/primary_text_light"
-                            android:textSize="17dp"
-                            android:textStyle="bold" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/tvJamOperasional"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="4dp"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="12dp" />
-
-                            </LinearLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    card_view:cardElevation="0dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/detail_field_location"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:text="Lokasi"
-                            android:textColor="@android:color/primary_text_light"
-                            android:textSize="17dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/item_teman_address"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            android:text="Gg. 9 Jalak, Gebog, Gondosari, Kec. Gebog, Kabupaten Kudus, Jawa Tengah 59333"
-                            android:textColor="@android:color/secondary_text_light"
-                            android:textSize="11dp" />
-
-                        <!--                        <ImageView-->
-                        <!--                            android:layout_width="match_parent"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:layout_marginLeft="16dp"-->
-                        <!--                            android:layout_marginRight="16dp"-->
-                        <!--                            android:layout_marginBottom="16dp"-->
-                        <!--                            android:scaleType="centerCrop"-->
-                        <!--                            android:src="@drawable/template_location" />-->
-
-                        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-                            xmlns:map="http://schemas.android.com/apk/res-auto"
-                            xmlns:tools="http://schemas.android.com/tools"
-                            android:id="@+id/map"
-                            android:name="com.google.android.gms.maps.SupportMapFragment"
-                            android:layout_width="match_parent"
-                            android:layout_height="300dp"
-                            android:layout_alignParentBottom="true"
-                            map:liteMode="true"
-                            tools:context=".MapsActivity" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:text="Book Now"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"/>
             </LinearLayout>
-        </ScrollView>
+
+
+        </LinearLayout>
     </LinearLayout>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        card_view:cardElevation="0dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
-
-            <Button
-                android:id="@+id/btn_booking"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_margin="0dp"
-                android:background="@drawable/roundedbutton"
-                android:text="pesan sekarang"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
     <include layout="@layout/custom_disclaimer_covid"
         android:id="@+id/divProkes"
