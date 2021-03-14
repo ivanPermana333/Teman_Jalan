@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,9 +44,9 @@ public class HistoryBookingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history_booking);
         binding();
 
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 //        String title = getIntent().getStringExtra("Title");
 //        mTitle.setText("History Booking");
@@ -59,10 +60,10 @@ public class HistoryBookingActivity extends AppCompatActivity {
     }
 
     private void binding(){
-//        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         rvBooking = findViewById(R.id.rv_booking);
 //        mTitle = toolbar.findViewById(R.id.toolbar_title);
-        tvname = findViewById(R.id.tv_user);
+//        tvname = findViewById(R.id.tv_user);
     }
     public boolean onSupportNavigateUp() {
         finish();
@@ -73,12 +74,14 @@ public class HistoryBookingActivity extends AppCompatActivity {
         adapterB = new BookingAdapter(HistoryBookingActivity.this, list);
         rvBooking.setAdapter(adapterB);
 
-//        bookingAdapter.setOnItemClickCallback(new BookingAdapter.OnItemClickCallback() {
-//            @Override
-//            public void onItemClicked(Booking data) {
-//                showSelectedBooking(data);
-//            }
-//        });
+        adapterB.setOnItemClickCallback(new BookingAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(Booking data) {
+                Intent intent = new Intent(HistoryBookingActivity.this, DetailHistoryActivity.class);
+                intent.putExtra("EXTRA_CUSTOMER", data);
+                startActivity(intent);
+            }
+        });
     }
 
     public void fetchUserBookings(String id) {
@@ -122,11 +125,11 @@ public class HistoryBookingActivity extends AppCompatActivity {
                     @Override
                     public void onError(ANError anError) {
                         Log.e(TAG, "onError: " + anError.getLocalizedMessage());
-                        Log.d("RBA", "onError: " + anError.getErrorBody());
-                        Log.d("RBA", "onError: " + anError.getLocalizedMessage());
-                        Log.d("RBA", "onError: " + anError.getErrorDetail());
-                        Log.d("RBA", "onError: " + anError.getResponse());
-                        Log.d("RBA", "onError: " + anError.getErrorCode());
+                        Log.d("IVN", "onError: " + anError.getErrorBody());
+                        Log.d("IVN", "onError: " + anError.getLocalizedMessage());
+                        Log.d("IVN", "onError: " + anError.getErrorDetail());
+                        Log.d("IVN", "onError: " + anError.getResponse());
+                        Log.d("IVN", "onError: " + anError.getErrorCode());
                     }
                 });
 

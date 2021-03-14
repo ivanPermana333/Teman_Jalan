@@ -33,19 +33,20 @@ public class LoginTemanActivity extends AppCompatActivity {
     public static final String PHONE = "phone";
     public static final String ADDRESS = "address";
     public static final String TOKEN = "token";
-    private TextView tvuser_teman;
     private EditText edtusername, edtPassword;
     private String username,token;
+    private  Button btnsignin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_teman);
 
-        tvuser_teman = findViewById(R.id.tvuser_teman);
+        edtusername = findViewById(R.id.edt_username);
+        btnsignin = findViewById(R.id.btn_sign_in);
         SharedPreferences sharedPreferences =  getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         token = sharedPreferences.getString(TOKEN, "");
 
-        tvuser_teman.setOnClickListener(new View.OnClickListener() {
+        btnsignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 username = edtusername.getText().toString().trim();
@@ -57,7 +58,7 @@ public class LoginTemanActivity extends AppCompatActivity {
                 }
 
                 if (!isEmpty) {
-                    AndroidNetworking.post(Constants.BASE_URL + "/api/login")
+                    AndroidNetworking.post(Constants.BASE_URL + "/api/loginteman")
                             .addBodyParameter("username", username)
                             .addBodyParameter("token", token)
                             .setPriority(Priority.MEDIUM)
@@ -71,7 +72,7 @@ public class LoginTemanActivity extends AppCompatActivity {
                                         String message = response.getString("message");
                                         if (status.equals("success")) {
                                             JSONObject data = response.getJSONObject("data");
-                                            Log.d("RBA", "resultData: " + data.toString());
+                                            Log.d("IVN", "resultData: " + data.toString());
                                             String name = data.getString("name");
                                             String id = data.getString("id");
                                             String email = data.getString("email");
@@ -107,6 +108,7 @@ public class LoginTemanActivity extends AppCompatActivity {
                                 @Override
                                 public void onError(ANError error) {
                                     // handle error
+                                    Toast.makeText(LoginTemanActivity.this, "Selamat datang ", Toast.LENGTH_SHORT).show();
                                     Log.d("IVN", "onError: " + error.getErrorBody());
                                     Log.d("IVN", "onError: " + error.getLocalizedMessage());
                                     Log.d("IVN", "onError: " + error.getErrorDetail());

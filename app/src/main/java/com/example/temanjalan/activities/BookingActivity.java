@@ -59,7 +59,7 @@ public class BookingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
 
-//        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
 //        mTitle = toolbar.findViewById(R.id.toolbar_title);
         rvTime = findViewById(R.id.rv_Time);
         btnbook = findViewById(R.id.btn_book);
@@ -67,16 +67,16 @@ public class BookingActivity extends AppCompatActivity {
         tvTotalPrice = findViewById(R.id.tv_total_price);
         recyclerView = findViewById(R.id.rv_Time);
 
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
-//        mTitle.setText("Booking Field");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        mTitle.setText("Booking Friends");
 
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         id = sharedPreferences.getString(ID, "");
 
         btnbook.setEnabled(false);
-btnbook.setBackgroundColor(Color.WHITE);
+        btnbook.setBackgroundColor(Color.WHITE);
 
         Intent intent = getIntent();
         Teman itemData = intent.getParcelableExtra("ID Teman");
@@ -133,7 +133,7 @@ btnbook.setBackgroundColor(Color.WHITE);
                                     Log.d(TAG, "onResponse: " + response);
                                     if (status.equals("success")) {
                                         Toast.makeText(BookingActivity.this, "Sukses booking", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(BookingActivity.this, Payment.class);
+                                        Intent intent = new Intent(BookingActivity.this, HistoryBookingActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                         startActivity(intent);
                                     }

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "612725768984",
+    "project_id": "temanjalan-bd51b",
+    "storage_bucket": "temanjalan-bd51b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612725768984:android:2dc54c1822d005062e146d",
+        "android_client_info": {
+          "package_name": "com.example.temanjalan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612725768984-llhn9tvl7vf5ntbh2hh2k0d35iduko8h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.temanjalan",
+            "certificate_hash": "fc8a779ffcbc481e42117ac7b7f25973ddfba179"
+          }
+        },
+        {
+          "client_id": "612725768984-07sosnpjg56ksncq5gc2d9ofn5tg7qth.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoLxwlLhI8adXhPFgcFZp5DMbzOPoDVIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612725768984-07sosnpjg56ksncq5gc2d9ofn5tg7qth.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

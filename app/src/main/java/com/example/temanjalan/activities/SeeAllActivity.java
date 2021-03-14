@@ -126,7 +126,7 @@ public class SeeAllActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             if (temanAdapter != null) {
-                                temanAdapter.clearData();
+//                                temanAdapter.clearData();
                                 temanAdapter.notifyDataSetChanged();
                             }
                             if (list != null)  list.clear();

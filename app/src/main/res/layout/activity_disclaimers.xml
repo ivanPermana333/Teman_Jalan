@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Disclaimers">
+
+    <LinearLayout
+        android:id="@+id/syarat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Syarat dan Ketentuan Penggunaan Aplikasi"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"
+            android:layout_margin="20dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/syarat"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Aplikasi teman jalan hanya digunakan untuk menggunakan layanan yang tersedia."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sya2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Aplikasi teman jalan tidak boleh disalahgunakan untuk menipu, merugikan, dan/atau menimbulkan ketidaknyamanan kepada pihak lain."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya2"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. Pengguna tidak diperbolehkan mengubah isi situs dan/atau aplikasi teman jalan untuk tujuan apapun."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya3"
+        android:orientation="horizontal"
+        tools:ignore="DuplicateIds">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. Teman jalan tidak bertanggung jawab atas kesalahan pengunduhan versi aplikasi yang dilakukan pengguna dan ketidakcocokan perangkat yang digunakan pengguna, serta hal-hal yang terjadi akibatnya."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya4"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. Jika pengguna terbukti menggunakan aplikasi untuk tujuan yang membahayakan, merugikan, atau di luar tujuan penggunaan yang dimaksud aplikasi ini, maka teman jalan berhak melarang pengguna untuk menggunakan aplikasi dan melaporkannya ke pihak berwajib.
+"
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya5"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6. teman jalan juga berhak melarang pengguna yang terbukti menggunakan aplikasi dengan perangkat yang tidak cocok atau tidak sah."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya6"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="7. Pengguna wajib menjaga kerahasiaan informasi yang didapatkan di aplikasi teman dan tidak menyalahgunakannya untuk tujuan yang merugikan pihak lain."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya7"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="8. Pengguna dihimbau untuk tidak melakukan segala bentuk tindakan yang merugikan atau menimbulkan ketidaknyamanan, seperti mengancam atau melecehkan, saat menggunakan aplikasi teman jalan."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya8"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9. Pengguna wajib mengikuti syarat dan ketentuan promo yang berlaku di teman jalan dan dilarang menyalahgunakan promo yang terdapat di aplikasi teman jalan."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sya10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya9"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10. Pengguna dilarang menggunakan informasi/ program/ fitur yang terdapat di situs dan aplikasi teman jalan untuk melanggar peraturan perundang-undangan yang berlaku di Indonesia."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya10"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="11. Pengguna bertanggung jawab penuh atas akun teman jalan miliknya dan dapat dimintai pertanggungjawaban jika sewaktu-waktu terjadi kerugian yang disebabkan oleh akunnya, meskipun akun tersebut disalahgunakan oleh pihak lain."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya11"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="12. Jika akun pengguna diretas atau dicuri sehingga pengguna kehilangan kontrol atas akunnya, maka pengguna wajib memberitahu teman jalan sesegera mungkin agar kami dapat menonaktifkan akun pengguna dan melakukan tindak pencegahan lainnya."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/sya13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sya12"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="13. teman jalan berhak membatalkan segala transaksi yang mencurigakan atau tidak sesuai dengan syarat dan ketentuan yang berlaku."
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/colorBlack"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sya14"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_below="@+id/sya13"
+        android:padding="@dimen/_10sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/check_setuju"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Setuju dan Lanjutkan" />
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_below="@+id/sya14"
+        android:id="@+id/btn_next"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundedbutton"
+        android:textColor="#fff"
+        android:layout_marginBottom="@dimen/_3ssp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:padding="@dimen/_12ssp"
+        android:text="NEXT"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1" />
+</RelativeLayout>

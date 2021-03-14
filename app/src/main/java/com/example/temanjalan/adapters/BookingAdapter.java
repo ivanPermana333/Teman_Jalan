@@ -1,6 +1,7 @@
 package com.example.temanjalan.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.temanjalan.R;
+import com.example.temanjalan.activities.DetailHistoryActivity;
 import com.example.temanjalan.model.Booking;
 
 import java.util.ArrayList;
@@ -21,12 +23,12 @@ import static com.example.temanjalan.activities.SignInActivity.USERNAME;
 
 public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingViewHolder> {
     private ArrayList<Booking> listBooking;
-//    private OnItemClickCallback onItemClickCallback;
+    private OnItemClickCallback onItemClickCallback;
         private Context mCtx;
 
-//    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
-//        this.onItemClickCallback = onItemClickCallback;
-//    }
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
 
     public BookingAdapter(Context mCtx, ArrayList<Booking> list) {
         this.listBooking = list;
@@ -52,7 +54,7 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
 
         SharedPreferences pref = mCtx.getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String userObject = pref.getString(USERNAME, "");
-        holder.tvName.setText(userObject);
+//        holder.tvName.setText(userObject);
 
 
         if(booking.getCode() != "null"){
@@ -72,6 +74,12 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
 //                }
 //            }
 //        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(listBooking.get(holder.getAdapterPosition()));
+            }
+        });
     }
 
     @Override
@@ -100,9 +108,10 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingAdapter.BookingV
 //                    mCtx.startActivity(intent);
 //                }
 //            });
+
         }
     }
-//    public interface OnItemClickCallback {
-//        void onItemClicked(Booking data);
-//    }
+    public interface OnItemClickCallback {
+        void onItemClicked(Booking data);
+    }
 }

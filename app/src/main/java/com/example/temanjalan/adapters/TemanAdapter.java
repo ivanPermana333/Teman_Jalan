@@ -1,5 +1,6 @@
 package com.example.temanjalan.adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,7 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
         holder.tvUsername.setText(teman.getUsername());
         holder.tvAddress.setText(teman.getAddress());
         holder.tvPrice.setText(teman.getPrice());
+        Log.d("RBA", "onError: " +teman.getUsername());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,14 +59,14 @@ public class TemanAdapter extends RecyclerView.Adapter<TemanAdapter.TemanViewHol
         return listTeman.size();
     }
 
-    public void clearData() {
-        int size = this.listTeman.size();
-        if (size > 0) {
-            for (int i = 0; i < size; i++) {
-                this.listTeman.remove(0);
-            }
-        }
-    }
+//    public void clearData() {
+//        int size = this.listTeman.size();
+//        if (size > 0) {
+//            for (int i = 0; i < size; i++) {
+//                this.listTeman.remove(0);
+//            }
+//        }
+//    }
 
     public class TemanViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;

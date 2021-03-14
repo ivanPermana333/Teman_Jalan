@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/_130sdp">
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Anda belum melakukan pembayaran,Silahkan transfer melalui :"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_below="@+id/txt1"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="-BRI xxxxxxxxxxxxxx"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="11dp"/>
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_below="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="-Gopay xxxxxxxxxxxxxx"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="11dp"/>
+    <TextView
+        android:id="@+id/txt4"
+        android:layout_below="@+id/txt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="-BRI xxxxxxxxxxxxxx"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="11dp"/>
+    <TextView
+        android:id="@+id/txt5"
+        android:layout_below="@+id/txt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="-Dana xxxxxxxxxxxxxx"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="11dp"/>
+
+    <TextView
+        android:layout_below="@+id/txt5"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Harap Upload Di bawah ini :"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_below="@+id/txt5"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/_15sdp">
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:orientation="horizontal"
+            card_view:cardCornerRadius="@dimen/_3ssp"
+            card_view:cardElevation="@dimen/_3ssp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:paddingBottom="0sp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_170sdp"
+                        android:src="@drawable/placeholder"
+                        android:scaleType="centerCrop"
+                        android:layout_marginBottom="0dp"
+                        android:id="@+id/iv_Img"/>
+
+                </FrameLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+        <com.example.temanjalan.custom.CustomTextViewLight
+            android:id="@+id/tvTap"
+            android:textStyle="normal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Tap image di atas untuk membuka memilih foto"
+            android:textColor="#525151"
+            android:layout_marginLeft="@dimen/_4ssp"
+            android:textSize="@dimen/_8ssp" />
+
+    </LinearLayout>
+</RelativeLayout>

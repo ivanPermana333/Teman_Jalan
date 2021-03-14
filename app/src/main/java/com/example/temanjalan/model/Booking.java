@@ -11,6 +11,7 @@ public class Booking implements Parcelable {
     private String code;
     private String idUser;
     private String username;
+    private String totalPrice;
 
     public String getIdUser() {
         return idUser;
@@ -23,7 +24,6 @@ public class Booking implements Parcelable {
         this.totalPrice = totalPrice;
     }
 
-    private String totalPrice;
 
     public String getCode() {
         return code;
@@ -98,6 +98,7 @@ public class Booking implements Parcelable {
         code= in.readString();
         idUser= in.readString();
         username= in.readString();
+        totalPrice=in.readString();
     }
     public Booking() {
 
@@ -120,6 +121,7 @@ public class Booking implements Parcelable {
         parcel.writeString(time);
         parcel.writeString(code);
         parcel.writeString(username);
+        parcel.writeString(totalPrice);
     }
 
 

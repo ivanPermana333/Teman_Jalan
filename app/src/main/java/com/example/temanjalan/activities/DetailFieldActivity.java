@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.example.temanjalan.R;
@@ -23,7 +24,7 @@ import static com.example.temanjalan.activities.SignInActivity.USERNAME;
 import static com.example.temanjalan.activities.SignInActivity.SHARED_PREFS;
 
 public class DetailFieldActivity extends AppCompatActivity{
-//    private Toolbar toolbar;
+    private Toolbar toolbar;
 //    private GoogleMap mMap;
     private Button btnbooking;
     private ImageView imgteman;
@@ -42,7 +43,7 @@ public class DetailFieldActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_field);
 
-//        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
 //        TextView mTitle = toolbar.findViewById(R.id.toolbar_title);
         btnbooking = findViewById(R.id.btn_booking);
         imgteman = findViewById(R.id.detail_temans_img);
@@ -56,9 +57,9 @@ public class DetailFieldActivity extends AppCompatActivity{
         btnProkesNext = findViewById(R.id.btnProkesNext);
         divProkes = findViewById(R.id.divProkes);
 
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 //        mTitle.setText("Detail Teman");
 
 //        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -132,6 +133,7 @@ public class DetailFieldActivity extends AppCompatActivity{
             }
         });
     }
+
 
 //    @Override
 //    public void onMapReady(GoogleMap googleMap) {

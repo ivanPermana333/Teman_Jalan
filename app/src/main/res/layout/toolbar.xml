@@ -2,7 +2,6 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_90sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/wave_4"
     app:elevation="0dp">
 
     <androidx.appcompat.widget.Toolbar
@@ -21,8 +20,6 @@
             android:textColor="@color/txtWhite"
             android:textSize="@dimen/_14ssp" />
 
+
     </androidx.appcompat.widget.Toolbar>
-
-
-
 </com.google.android.material.appbar.AppBarLayout>

@@ -7,15 +7,20 @@
     tools:context=".activities.HistoryBookingActivity"
     android:orientation="vertical">
 
-<!--    <include-->
-<!--        layout="@layout/toolbar"-->
-<!--        android:id="@+id/divToolbar"/>-->
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="218dp"
         android:background="@drawable/bg_card_down_round">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginTop="24dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+        </androidx.appcompat.widget.Toolbar>
 
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView

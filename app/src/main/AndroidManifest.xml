@@ -19,8 +19,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.Payment"></activity>
-        <activity android:name=".activities.LoginTemanActivity" />
+        <activity android:name=".activities.Disclaimers"
+            android:theme="@style/AppThemeNoAcitonBar"/>
+        <activity
+            android:name=".activities.Payment"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.LoginTemanActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
         <activity android:name=".activities.UserTemanActivity" />
         <activity
             android:name=".activities.SeeAllActivity"
@@ -101,6 +107,9 @@
             android:theme="@style/AppThemeNoAcitonBar" />
         <activity
             android:name=".activities.FieldActivity"
+            android:theme="@style/AppThemeNoAcitonBar" />
+        <activity
+            android:name=".activities.DetailHistoryActivity"
             android:theme="@style/AppThemeNoAcitonBar" />
         <activity
             android:name=".activities.SplashScreenActivity"

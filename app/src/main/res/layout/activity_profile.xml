@@ -8,8 +8,7 @@
     android:orientation="vertical"
     android:background="@color/nah">
 
-<!--    <include layout="@layout/toolbar"-->
-<!--        android:id="@+id/divToolbar"/>-->
+
 
     <RelativeLayout
         android:id="@+id/divTop"
@@ -23,44 +22,38 @@
             android:scaleType="centerCrop"
             android:src="@drawable/champeone" />
 
-        <ImageView
-            android:layout_marginTop="@dimen/_30sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            android:tint="@color/colorWhite"/>
+        <!--        <ImageView-->
+        <!--            android:layout_marginTop="@dimen/_30sdp"-->
+        <!--            android:layout_marginLeft="@dimen/_15sdp"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:src="@drawable/ic_baseline_arrow_back_24"-->
+        <!--            android:tint="@color/colorWhite"/>-->
+
         <ImageView
             android:id="@+id/iV_info"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginRight="@dimen/_10sdp"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_info_24"
-            android:tint="@color/colorWhite"/>
+            android:tint="@color/colorWhite" />
     </RelativeLayout>
 
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/divProfileTop"-->
-<!--        android:layout_below="@+id/divToolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:gravity="center"-->
-<!--        android:paddingVertical="@dimen/_20sdp">-->
-<!--        <TextView-->
-<!--            android:id="@+id/title"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:fontFamily="@font/montserrat_bold"-->
-<!--            android:text="Teman Jalan"-->
-<!--            android:gravity="center_vertical"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textColor="@color/nah"/>-->
+<!--    <include layout="@layout/toolbar"-->
+<!--        android:id="@+id/divToolbar"/>-->
 
-<!--    </LinearLayout>-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <ScrollView
         android:layout_marginTop="@dimen/_180sdp"
@@ -206,21 +199,7 @@
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/tvuser_teman"
-                android:layout_width="375dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:background="@drawable/bg_round"
-                android:backgroundTint="@color/nah"
-                android:fontFamily="@font/montserrat"
-                android:gravity="center"
-                android:text="Ingin Login sebagai Teman "
-                android:textAlignment="center"
-                android:textColor="@color/txtWhite"
-                android:textSize="@dimen/_10sdp"
-                android:textStyle="bold" />
+
 
             <com.example.temanjalan.custom.CustomTextViewBold
                 android:id="@+id/tvLogOut"

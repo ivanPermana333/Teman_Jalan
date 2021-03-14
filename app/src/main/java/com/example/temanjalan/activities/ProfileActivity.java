@@ -35,7 +35,7 @@ import static com.example.temanjalan.activities.SignInActivity.USERNAME;
 
 public class ProfileActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    private TextView mTitle, tvLogOut, userteman;
+    private TextView mTitle, tvLogOut;
     private EditText et_username, et_nama, et_phone, et_alamat, et_email;
     private String id;
     private ImageView iv_info;
@@ -48,10 +48,11 @@ public class ProfileActivity extends AppCompatActivity {
         binding();
 
 //        String title = getIntent().getStringExtra("Title");
-////        mTitle.setText(title);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        mTitle.setText(title);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         id = sharedPreferences.getString(ID, "");
@@ -81,7 +82,7 @@ public class ProfileActivity extends AppCompatActivity {
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.clear();
                                 editor.apply();
-                                Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+                                Intent intent = new Intent(ProfileActivity.this, Disclaimers.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                                 finish();
@@ -91,24 +92,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        userteman = findViewById(R.id.tvuser_teman);
-        userteman.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new AlertDialog.Builder(ProfileActivity.this)
-                        .setMessage("Apakah anda Anda sudah memiliki akun sebagai User Teman ?")
-                        .setNegativeButton("Tidak", null)
-                        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface arg0, int arg1) {
-                                Intent intent = new Intent(ProfileActivity.this, UserTemanActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                finish();
-                            }
-                        }).create().show();
-
-            }
-        });
 
         iv_info = findViewById(R.id.iV_info);
         iv_info.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +106,7 @@ public class ProfileActivity extends AppCompatActivity {
 //                                SharedPreferences.Editor editor = sharedPreferences.edit();
 //                                editor.clear();
 //                                editor.apply();
-                                String url = "http://192.168.43.92:8000/insertteman";
+                                String url = "http://192.168.43.92:8000/registerteman";
                                 Intent i = new Intent(Intent.ACTION_VIEW);
                                 i.setData(Uri.parse(url));
                                 startActivity(i);

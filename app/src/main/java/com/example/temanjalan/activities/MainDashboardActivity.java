@@ -44,7 +44,7 @@ public class MainDashboardActivity extends AppCompatActivity {
     private Button divBooking;
     private TextView tvDateToday, tvResultFriends, tvName, tvEmail, tvCondition, see_all;
     private LinearLayout divAllMatch, divMyMatch,  divFutsal, divBuluTangkis, divVolley;
-//    private CircleImageView ivFutsal, ivBuluTangkis, ivVolley;
+    //    private CircleImageView ivFutsal, ivBuluTangkis, ivVolley;
     private ImageView ivReload, divProfile;
     private ShimmerFrameLayout mShimmerViewContainer;
     private RecyclerView rv_Temans;
@@ -132,7 +132,7 @@ public class MainDashboardActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             if (temanAdapter != null) {
-                                temanAdapter.clearData();
+//                                temanAdapter.clearData();
                                 temanAdapter.notifyDataSetChanged();
                             }
                             if (list != null)  list.clear();
@@ -150,7 +150,24 @@ public class MainDashboardActivity extends AppCompatActivity {
                                 rv_Temans.setVisibility(View.GONE);
                                 mShimmerViewContainer.stopShimmer();
                                 mShimmerViewContainer.setVisibility(View.GONE);
-                            }else{
+                            }else if (data.length() <= 5){
+                                System.out.println("Debug : " + data);
+                                for (int position = 0; position < data.length(); position++) {
+                                    JSONObject teman = data.getJSONObject(position);
+                                    Teman item = new Teman();
+                                    item.setId(teman.getString("id"));
+                                    item.setName(teman.getString("name"));
+                                    item.setUmur(teman.getString("umur"));
+                                    item.setAddress(teman.getString("address"));
+                                    item.setUsername(teman.getString("username"));
+                                    item.setPrice(teman.getString("price"));
+                                    item.setPhoto(Constants.BASE_URL + "/storage/" + teman.getString("picture"));
+                                    item.setLocation(teman.getString("location"));
+                                    item.setOpen(teman.getString("open"));
+                                    item.setClose(teman.getString("close"));
+                                    list.add(item);
+                                }
+                            } else {
                                 for (int position = 0; position < 5; position++) {
                                     JSONObject teman = data.getJSONObject(position);
                                     Teman item = new Teman();
@@ -166,14 +183,15 @@ public class MainDashboardActivity extends AppCompatActivity {
                                     item.setClose(teman.getString("close"));
                                     list.add(item);
                                 }
-                                showRecycler();
-
-                                mShimmerViewContainer.stopShimmer();
-                                mShimmerViewContainer.setVisibility(View.GONE);
-                                rv_Temans.setVisibility(View.VISIBLE);
-                                tvCondition.setVisibility(View.GONE);
-                                ivReload.setVisibility(View.GONE);
                             }
+                            
+                            showRecycler();
+
+                            mShimmerViewContainer.stopShimmer();
+                            mShimmerViewContainer.setVisibility(View.GONE);
+                            rv_Temans.setVisibility(View.VISIBLE);
+                            tvCondition.setVisibility(View.GONE);
+                            ivReload.setVisibility(View.GONE);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -332,6 +350,7 @@ public class MainDashboardActivity extends AppCompatActivity {
 
     private void showRecycler() {
         rv_Temans.setLayoutManager(new LinearLayoutManager(this));
+        Log.d("RBA", "size: " + list.size());
         temanAdapter = new TemanAdapter(list);
         rv_Temans.setAdapter(temanAdapter);
 
